@@ -108,18 +108,18 @@
                     text += "\n";
                 }
 
-                share.setAttribute("data-clipboard-text", `Yo! Check out my Colorle score! (${attempts}/6)\n\n${text}\n${window.location.href}`);
+                share.setAttribute("data-clipboard-text", `Yo! Check out my Colorle score! (${guessedCombination == randomCombination ? attempts : "X" }/6)\n\n${text}\n${window.location.href}`);
             }
         }
     }
 
     help.onclick = () => alert(`Your objective is to guess the the random color combination.
 
-    If the color outline is BLACK, it means the color doesn't exist in the combination.
-    If the color outline is ORANGE, it means the color exists but not at that position.
-    If the color outline is GREEN, it means the color is in the correct position.
+If the color outline is BLACK, it means the color doesn't exist in the combination.
+If the color outline is ORANGE, it means the color exists but not at that position.
+If the color outline is GREEN, it means the color is in the correct position.
 
-    Good luck!`);;
+Good luck!`);
 
     if (window.ClipboardJS == null || !Math.seedrandom && window.location.search == "?daily") {
         alert("Failed to load the resources. Please, restart the page.");
