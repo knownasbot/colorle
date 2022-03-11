@@ -1,0 +1,112 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+hr {
+    max-width: 800px;
+    border: 1px dashed black;
+}
+
+#help {
+    width: 38px;
+    height: 38px;
+    font-size: 2em;
+    line-height: 1em;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+}
+
+a {
+    margin: 0 3px;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px dotted black;
+}
+
+.info p {
+    font-size: 1.3em;
+}
+
+.info p i {
+    opacity: 0.4;
+    text-decoration: line-through;
+}
+
+.game {
+    margin: auto;
+    max-width: 600px;
+}
+
+#color-input, .guess-row span {
+    width: 64px;
+    height: 64px;
+    border-radius: 20px;
+    transition: background 0.1s;
+}
+
+.row {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#color-input, .guess-row span, button {
+    border: 1px solid #b8b8b8;
+}
+
+.palette button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.selected {
+    box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.15s;
+}
+
+#submit, #share {
+    width: 150px;
+    height: 35px;
+    margin-top: 25px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    transition: filter 0.15s;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(0.95);
+}
+
+#share {
+    width: 80px;
+}
+
+/* Guess row */
+
+.guess-row .correct {
+    box-shadow: inset 0 0 0 5px  green;
+}
+
+.guess-row .exists {
+    box-shadow: inset 0 0 0 5px  orange;
+}
+
+.guess-row .wrong {
+    box-shadow: inset 0 0 0 5px black;
+}
+
+@media screen and (max-width: 600px) {
+    #color-input, .guess-row span {
+        width: 60px;
+        height: 60px;
+    }
+}

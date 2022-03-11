@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colorle</title>
+    <meta name="title" content="Colorle">
+    <meta name="description" content="Guess the random color combination!">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Colorle">
+    <meta property="og:description" content="Guess the random color combination!">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+</head>
+<body>
+    <div class="info">
+        <h1>Colorle</h1>
+        <hr>
+        <p>Guess the random color combination!</p>
+        <button id="help">?</button>
+
+        <div class="modes">
+            <a href="/">Random</a>
+            <a href="/?daily">Daily</a>
+        </div>
+    </div>
+
+    <div class="game">
+        <div class="guess-row" id="guess-row"></div>
+
+        <div id="controls">
+            <div class="row">
+                <div id="color-input"></div>
+                <div id="color-input"></div>
+                <div id="color-input"></div>
+                <div id="color-input"></div>
+                <div id="color-input"></div>
+                <div id="color-input"></div>
+            </div>
+
+            <div class="palette">
+                <button class="color selected" value="1" style="background: #c91b35;"></button>
+                <button class="color" value="2" style="background: #1ac946;"></button>
+                <button class="color" value="3" style="background: #1a3ac9;"></button>
+                <button class="color" value="4" style="background: #e5e22d;"></button>
+                <button class="color" value="5" style="background: #ca26d3;"></button>
+                <button class="color" value="6" style="background: #1ab5c9;"></button>
+            </div>
+
+            <button id="submit">Submit that shit</button>
+        </div>
+        
+        <button id="share" hidden>Share!</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
