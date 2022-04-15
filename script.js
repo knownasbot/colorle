@@ -121,7 +121,7 @@
                     text += "\n";
                 }
 
-                share.setAttribute("data-clipboard-text", `Yo! Check out my Colorle score! (${guessedCombination == randomCombination ? attempts : "X" }/6)\n\n${text}\n${window.location.host + window.location.path}`);
+                share.setAttribute("data-clipboard-text", `Yo! Check out my Colorle score! (${guessedCombination == randomCombination ? attempts : "X" }/6)\n\n${text}\n${window.location.host + window.location.pathname}`);
             }
         }
     }
