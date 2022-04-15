@@ -16,8 +16,12 @@
     let seed = "" + date.getUTCDate() + date.getMonth() + date.getUTCFullYear();
     let random = Math.seedrandom && window.location.search == "?daily" ? (new Math.seedrandom(seed)) : Math.random;
     let randomCombination = "";
+    let colorCount = [];
     for (let i=0; i < 6; i++) {
-        randomCombination += Math.floor(random() * 6) + 1;
+        let code = Math.floor(random() * 6) + 1;
+
+        randomCombination += code;
+        colorCount[code] = (colorCount[code] ?? 0) + 1;
     }
 
     // console.log(randomCombination)
@@ -52,9 +56,17 @@
         }
 
         if (guessedCombination.length == 6) {
+            let count = [ ...colorCount ];
+
             let row = document.createElement("div");
             row.className = "row";
 
+            for (let i=0; i < 6; i++) {
+                if (randomCombination[i] == guessedCombination[i]) {
+                    count[guessedCombination[i]]--;
+                }
+            }
+            
             for (let i=0; i < 6; i++) {
                 let code = guessedCombination[i];
                 let color;
@@ -64,8 +76,9 @@
 
                 if (randomCombination[i] == code) {
                     color = "correct";
-                } else if (randomCombination.includes(code)) {
+                } else if (count[code] > 0) {
                     color = "exists";
+                    count[code]--;
                 } else {
                     color = "wrong";
                 }
